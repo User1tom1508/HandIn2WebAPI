@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eX2wDGzatX44KVYgw5Lcq9VzLHkJHxmi8lNoRv8j/bnLZ6gjD+MztjwXJbUNw84CiS7bllAhD/x/DX2VtI1fMw==",
+  "dgSpecHash": "siR15mKm+vtZU3RrIcaQ20zd5u4mynWJdMUak5aKURb/4t2uIY3OgxDE2BxKcBjD7za97Fca7seedDIFibf1zQ==",
   "success": true,
-  "projectFilePath": "D:\\CodingProjectsSchool\\DNP\\DNPHandin2WebApi\\DNPHandIn2WebApi\\DNPHandIn2WebApi\\DNPHandIn2WebApi.csproj",
+  "projectFilePath": "D:\\CodingProjectsSchool\\DNP\\HandIn2WebAPI\\DNPHandIn2WebApi\\DNPHandIn2WebApi.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

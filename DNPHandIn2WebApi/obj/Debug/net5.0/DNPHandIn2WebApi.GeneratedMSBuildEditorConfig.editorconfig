@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = DNPHandIn2WebApi
-build_property.ProjectDir = D:\CodingProjectsSchool\DNP\DNPHandin2WebApi\DNPHandIn2WebApi\DNPHandIn2WebApi\
+build_property.ProjectDir = D:\CodingProjectsSchool\DNP\HandIn2WebAPI\DNPHandIn2WebApi\

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CodingProjectsSchool\\DNP\\DNPHandin2WebApi\\DNPHandIn2WebApi\\DNPHandIn2WebApi\\DNPHandIn2WebApi.csproj",
+      "projectUniqueName": "D:\\CodingProjectsSchool\\DNP\\HandIn2WebAPI\\DNPHandIn2WebApi\\DNPHandIn2WebApi.csproj",
       "projectName": "DNPHandIn2WebApi",
-      "projectPath": "D:\\CodingProjectsSchool\\DNP\\DNPHandin2WebApi\\DNPHandIn2WebApi\\DNPHandIn2WebApi\\DNPHandIn2WebApi.csproj",
+      "projectPath": "D:\\CodingProjectsSchool\\DNP\\HandIn2WebAPI\\DNPHandIn2WebApi\\DNPHandIn2WebApi.csproj",
       "packagesPath": "C:\\Users\\brezn\\.nuget\\packages\\",
-      "outputPath": "D:\\CodingProjectsSchool\\DNP\\DNPHandin2WebApi\\DNPHandIn2WebApi\\DNPHandIn2WebApi\\obj\\",
+      "outputPath": "D:\\CodingProjectsSchool\\DNP\\HandIn2WebAPI\\DNPHandIn2WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\brezn\\AppData\\Roaming\\NuGet\\NuGet.Config"
