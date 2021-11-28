@@ -30,8 +30,9 @@ namespace HandIn1.Data
 
         public async Task Delete(Adult adult)
         {
-            Adult adultToDelete = _dbContext.Adults.First(adultos => adultos.Id == adult.Id);
+            Adult adultToDelete = _dbContext.Adults.Include(adult1 =>adult1.Job).First(adultos => adultos.Id == adult.Id);
             _dbContext.Adults.Remove(adultToDelete);
+            _dbContext.Jobs.Remove(adultToDelete.Job);
            await _dbContext.SaveChangesAsync();
         }
 
@@ -40,9 +41,6 @@ namespace HandIn1.Data
             await _dbContext.Adults.AddAsync(adult);
             await _dbContext.Jobs.AddAsync(adult.Job);
             await _dbContext.SaveChangesAsync();
-            /*_dbContext.Attach(adult);*/
-            /*await _dbContext.SaveChangesAsync();*/
-           
         }
 
         public async void Modify(Adult adult)
