@@ -1,5 +1,10 @@
-namespace Models {
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Models;
+
+namespace DNPHandIn2WebApi.Model {
 public class Adult : Person {
-    public Job JobTitle { get; set; }
+    
+    public Job Job { get; set; }
 }
 }

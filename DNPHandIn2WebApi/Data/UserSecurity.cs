@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DNPHandIn2WebApi.Persistance;
 using HandIn1.Data;
 using Models;
 
@@ -9,27 +10,15 @@ namespace DNPHandIn2WebApi.Data
     public class UserSecurity : IUserSecurity
     {
         
-        private List<User> users;
-
-        public UserSecurity()
+        private readonly CustomDbContext _dbContext;
+        
+        public UserSecurity(CustomDbContext dbContext)
         {
-            users = new[]
-            {
-                new User()
-                {
-                    Username = "Tomas",
-                    Password = "Tomas",
-                    CredentialLevel = 1
-                }
-            }.ToList();
+            _dbContext = dbContext;
         }
-
-       
-          
-
-
+        
         public async Task<User> ValidateUser(string userName, string password) {
-            User first = users.FirstOrDefault(user => user.Username.Equals(userName));
+            User first = _dbContext.Users.FirstOrDefault(user => user.Username.Equals(userName));
             if (first == null)
             {
                 return null;

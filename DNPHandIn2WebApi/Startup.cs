@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DNPHandIn2WebApi.Data;
+using DNPHandIn2WebApi.Persistance;
 using HandIn1.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +30,7 @@ namespace DNPHandIn2WebApi
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddDbContext<CustomDbContext>();
             services.AddControllers();
             services.AddScoped<IAdultAdapter, AdultAdapter>();
             services.AddScoped<IUserSecurity, UserSecurity>();

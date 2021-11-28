@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using DNPHandIn2WebApi.Model;
 using Models;
 
 namespace HandIn1.Data

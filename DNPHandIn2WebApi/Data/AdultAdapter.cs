@@ -3,54 +3,46 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DNPHandIn2WebApi.Model;
+using DNPHandIn2WebApi.Persistance;
 using FileData;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using Models;
 
 namespace HandIn1.Data
 {
     public class AdultAdapter: IAdultAdapter
     {
-        private FileContext _fileContext;
-        public IList<Adult> adults; 
+        private readonly CustomDbContext _dbContext;
         
-       public AdultAdapter()
-        {
-            _fileContext = new FileContext();
-            adults = _fileContext.Adults;
-
-        }
+       public AdultAdapter(CustomDbContext dbContext)
+       {
+           _dbContext = dbContext;
+       }
 
 
         public async Task<IList<Adult>> getAllAdults()
         {
-           return new List<Adult>(adults);
+            return _dbContext.Adults.Include(adult => adult.Job).ToList();
         }
 
         public async Task Delete(Adult adult)
         {
-            Adult adultToDelete = adults.First(adultos => adultos.Id == adult.Id);
-            adults.Remove(adultToDelete);
-           _fileContext.SaveChanges();
+            Adult adultToDelete = _dbContext.Adults.First(adultos => adultos.Id == adult.Id);
+            _dbContext.Adults.Remove(adultToDelete);
+           await _dbContext.SaveChangesAsync();
         }
 
         public async Task Add(Adult adult)
         {
-
-            try
-            {
-                adult.Id = adults.Max(adult => adult.Id);
-                adult.Id++;
-            }
-            catch (IndexOutOfRangeException e)
-            {
-                adult.Id = 1;
-            }
-            
-            adults.Add(adult);
-            _fileContext.SaveChanges();
-            
+            await _dbContext.Adults.AddAsync(adult);
+            await _dbContext.Jobs.AddAsync(adult.Job);
+            await _dbContext.SaveChangesAsync();
+            /*_dbContext.Attach(adult);*/
+            /*await _dbContext.SaveChangesAsync();*/
+           
         }
 
         public async void Modify(Adult adult)
